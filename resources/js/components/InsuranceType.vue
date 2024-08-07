@@ -1,15 +1,15 @@
 <template>
     <div
-        @click="model = value"
-        class="transition p-6 rounded-2xl overflow-hidden border-2 border-transparent hover:border-primary-1000 cursor-pointer relative before:left-0 before:bottom-0 before:top-0 before:absolute before:w-full before:h-full before:-z-10 before:bg-gradient-to-r before:from-slate-900 before:to-slate-900/25"
-        :class="{'border-primary-1000': model === value}"
+        @click="toggleValue"
+        class="transition p-6 rounded-2xl overflow-hidden border-2 hover:border-primary-1000 cursor-pointer relative before:left-0 before:bottom-0 before:top-0 before:absolute before:w-full before:h-full before:-z-10 before:bg-gradient-to-r before:from-slate-900 before:to-slate-900/25"
+        :class="{'border-primary-1000': model.includes(value), 'border-transparent': ! model.includes(value)}"
     >
         <div class="absolute top-0 left-0 bottom-0 right-0 w-full h-full -z-20">
             <slot name="poster"></slot>
         </div>
         <div
             class="absolute transition top-0 end-0 w-10 h-10 rounded-es-2xl grid place-items-center text-white text-xl bg-primary-1000"
-            :class="{'opacity-100': model === value, 'opacity-0': model !== value}"
+            :class="{'opacity-100': model.includes(value), 'opacity-0': ! model.includes(value)}"
         >
             <i class="fas fa-check"></i>
         </div>
@@ -30,10 +30,19 @@
 const model = defineModel()
 const props = defineProps({
     value: {
-        type: Number || String,
+        type: String,
         required: true
     }
 })
+
+const toggleValue = () => {
+    const index = model.value.indexOf(props.value);
+    if (index > -1) {
+        model.value.splice(index, 1);
+    } else {
+        model.value.push(props.value);
+    }
+};
 </script>
 
 <style scoped lang="scss">

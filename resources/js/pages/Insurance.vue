@@ -67,7 +67,7 @@
                     </AppInputFormat>
                 </div>
                 <div class="col-span-12">
-                    <AppInputFormat label="Phone No">
+                    <AppInputFormat label="Phone No" :required="form.contact_preference === userContactPreference.find(item => item.name === 'Phone').value">
                         <PrimeInputText v-model="form.phone" placeholder="Enter Phone No" />
                     </AppInputFormat>
                 </div>
@@ -153,7 +153,7 @@ const props = defineProps({
 
 const step = ref(0)
 const form = useForm({
-    type: null,
+    type: [],
     firstname: '',
     lastname: '',
     email: '',
