@@ -1,5 +1,5 @@
 <template>
-asd
+    <slot></slot>
 </template>
 
 <script setup>
