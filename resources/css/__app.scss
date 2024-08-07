@@ -28,6 +28,72 @@ body {
 .transition {
     @apply transition-all ease-in-out duration-200;
 }
+
+// Primevue
+.p-toast-message {
+    border: none !important;
+    .p-toast-bottom-left {
+        right: unset;
+    }
+    .p-toast-message-content {
+        align-items: center !important;
+        background: white;
+        border: none;
+        border-radius: 0.5rem;
+        gap: 0.25rem;
+        .p-toast-message-icon {
+            width: 2rem;
+            height: 2rem;
+            padding: 0.35rem;
+            border-radius: 0.35rem;
+        }
+        .p-toast-message-text {
+            flex-direction: row;
+            align-items: center;
+            flex: 1;
+        }
+        .p-toast-close-button {
+            margin: unset;
+            right: unset;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.35rem;
+        }
+    }
+
+    &.p-toast-message-success {
+        .p-toast-message-content {
+            .p-toast-message-icon {
+                background: rgba(#3AB54A, 0.1);
+                color: #3AB54A;
+            }
+            .p-toast-close-button {
+                .p-toast-close-icon {
+                    color: #3AB54A;
+                }
+                &:hover {
+                    background: rgba(#3AB54A, 0.1);
+                }
+            }
+        }
+    }
+    &.p-toast-message-error {
+        .p-toast-message-content {
+            .p-toast-message-icon {
+                background: rgba(#DE0000, 0.1);
+                color: #DE0000;
+            }
+            .p-toast-close-button {
+                .p-toast-close-icon {
+                    color: #DE0000;
+                }
+                &:hover {
+                    background: rgba(#DE0000, 0.1);
+                }
+            }
+        }
+    }
+}
 .p-component {
     border-radius: 0.75rem !important;
 }
