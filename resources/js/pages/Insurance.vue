@@ -35,7 +35,7 @@
         </template>
         <template #footer>
             <AppButton
-                :disabled="form.type === null"
+                :disabled="form.type.length === 0"
                 @click="step = 1"
             >
                 Agree and Continue
