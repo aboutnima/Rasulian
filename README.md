@@ -5,7 +5,7 @@ This is the README file for the Rasulian Laravel application. This guide will he
 ## Overview
 
 - **Laravel Version:** 11
-- **Frontend:** Inertia.js
+- **Frontend:** Inertia.js including [PrimeVue UI Suite (Form Kit)](https://primevue.org/)
 - **PHP Version:** 8.2
 
 ## Prerequisites
@@ -48,6 +48,7 @@ This application uses Laravel Sail for Docker container management.
 1. **Start Docker:**
 
    Ensure Docker is running on your machine.
+
 
 2. **Start the application using Sail:**
 
