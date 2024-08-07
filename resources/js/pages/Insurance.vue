@@ -68,7 +68,7 @@
                         </AppInputFormat>
                     </div>
                     <div class="col-span-12">
-                        <AppInputFormat label="Phone No" :error="form.errors.phone" :required="form.contact_preference === userContactPreference.find(item => item.name === 'Phone').value">
+                        <AppInputFormat label="Phone No" :error="form.errors.phone" :required="form.contact_preference === consumerContactPreference.find(item => item.name === 'Phone').value">
                             <PrimeInputText v-model="form.phone" placeholder="Enter Phone No" />
                         </AppInputFormat>
                     </div>
@@ -76,7 +76,7 @@
                         <AppInputFormat label="Contact Preference">
                             <PrimeSelect
                                 v-model="form.contact_preference"
-                                :options="userContactPreference"
+                                :options="consumerContactPreference"
                                 option-label="name"
                                 option-value="value"
                                 filter
@@ -151,7 +151,7 @@ import App from "@/pages/App.vue";
 
 const props = defineProps({
     insuranceType: Array,
-    userContactPreference: Array,
+    consumerContactPreference: Array,
     states: Array
 })
 

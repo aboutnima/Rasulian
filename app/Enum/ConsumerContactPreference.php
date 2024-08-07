@@ -4,7 +4,7 @@ namespace App\Enum;
 
 use App\Traits\EnumToArray;
 
-enum UserContactPreference: string
+enum ConsumerContactPreference: string
 {
     use EnumToArray;
 

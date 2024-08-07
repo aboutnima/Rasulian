@@ -3,7 +3,7 @@
 namespace App\Http\Requests\Insurance;
 
 use App\Enum\InsuranceType;
-use App\Enum\UserContactPreference;
+use App\Enum\ConsumerContactPreference;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -31,10 +31,10 @@ class StoreRequest extends FormRequest
             'lastname' => ['required', 'string', 'min:3', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'phone' => [
-                Rule::requiredIf($this->input('contact_preference') === \App\Enum\UserContactPreference::Phone->value),
+                Rule::requiredIf($this->input('contact_preference') === \App\Enum\ConsumerContactPreference::Phone->value),
                 'max:20'
             ],
-            'contact_preference' => ['required', Rule::in(UserContactPreference::values())],
+            'contact_preference' => ['required', Rule::in(ConsumerContactPreference::values())],
             'street' => ['nullable', 'string', 'max:255'],
             'ste_apt' => ['nullable', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],

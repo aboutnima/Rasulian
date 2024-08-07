@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('insurances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('consumer_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->enum('type', \App\Enum\InsuranceType::values());
             $table->enum('status', \App\Enum\InsuranceStatus::values())->default(\App\Enum\InsuranceStatus::Pending->value);
             $table->timestamps();

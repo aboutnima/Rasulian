@@ -3,14 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Enum\UserContactPreference;
+use App\Enum\ConsumerContactPreference;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Consumer extends Authenticatable
 {
     use HasFactory, Notifiable;
 
@@ -23,7 +23,7 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'contact_preference' => UserContactPreference::class
+            'contact_preference' => ConsumerContactPreference::class
         ];
     }
 

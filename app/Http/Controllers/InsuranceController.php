@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Enum\InsuranceType;
-use App\Enum\UserContactPreference;
+use App\Enum\ConsumerContactPreference;
 use App\Http\Requests\Insurance\StoreRequest;
-use App\Models\User;
+use App\Models\Consumer;
 
 class InsuranceController extends Controller
 {
@@ -13,7 +13,7 @@ class InsuranceController extends Controller
     {
         return inertia('Insurance', [
             'insuranceType' => fn () => InsuranceType::fullCase(),
-            'userContactPreference' => fn () => UserContactPreference::fullCase(),
+            'consumerContactPreference' => fn () => ConsumerContactPreference::fullCase(),
             'states' => fn () => [
                 ['name' => 'TX', 'value' => '0'],
                 ['name' => 'LA', 'value' => '1'],
@@ -23,7 +23,7 @@ class InsuranceController extends Controller
 
     public function store(StoreRequest $request)
     {
-        $user = User::firstOrCreate([
+        $user = Consumer::firstOrCreate([
             'email' => $request->validated('email')
         ], [
             'firstname' => $request->validated('firstname'),
