@@ -5,6 +5,10 @@
                 <slot name="poster"></slot>
             </div>
             <div class="h-full flex flex-col gap-8 justify-center ps-8 pe-24 py-36">
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-medium text-3xl text-slate-800"><slot name="title"></slot></h1>
+                    <p class="text-slate-500 text-lg font-light"><slot name="subtitle"></slot></p>
+                </div>
                 <div class="flex flex-col gap-4">
                     <slot name="body"></slot>
                 </div>

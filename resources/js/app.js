@@ -17,14 +17,21 @@ import { definePreset } from "@primevue/themes";
 import ToastService from "primevue/toastservice";
 import Toast from "primevue/toast";
 import InputText from "primevue/inputtext";
+import Select from "primevue/select";
 
 // Primevue custom preset
 const customPreset = definePreset(Aura, {
     components: {
         inputtext: {
             padding: {
-                x: '0.75rem',
-                y: '0.75rem',
+                x: '1rem',
+                y: '1rem',
+            }
+        },
+        select: {
+            padding: {
+                x: '1rem',
+                y: '1rem',
             }
         },
     }
@@ -53,6 +60,7 @@ createInertiaApp({
             .use(ToastService)
             .component('PrimeToast', Toast)
             .component('PrimeInputText', InputText)
+            .component('PrimeSelect', Select)
 
             // Ziggy
             .use(ZiggyVue)

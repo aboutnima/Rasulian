@@ -22,7 +22,6 @@ export default defineConfig({
             scss: {
                 additionalData: `
                     @use "sass:math";
-                    @import "resources/css/__var.scss";
                     @import "resources/css/__app.scss";
                     @import "resources/css/__reset.scss";
                 `,

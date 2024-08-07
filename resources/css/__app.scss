@@ -1,6 +1,5 @@
 @layer css-reset, tailwind-base, primevue, tailwind-utilities;
 
-// Tailwind
 @layer tailwind-base {
     @tailwind base;
 }
@@ -8,12 +7,9 @@
     @tailwind components;
     @tailwind utilities;
 }
-.transition {
-    @apply transition-all ease-in-out duration-200;
-}
 
 body, html {
-    font-family: map-get($font-family, 'Inter');
+    font-family: 'Inter', serif;
     font-size: 1rem;
     text-align: left;
     direction: ltr;
@@ -26,17 +22,15 @@ html {
 }
 body {
     overflow-y: hidden;
-    background: $body-color;
+    background: #fff;
 }
 
-// Fonts
-.font-inter {
-    font-family: map-get($font-family, 'Inter') !important;
+.transition {
+    @apply transition-all ease-in-out duration-200;
 }
-
-// Container
-.container {
-    width: 100%;
-    max-width: 1180px;
-    margin-inline: auto;
+.p-component {
+    border-radius: 0.75rem !important;
+}
+.p-select-option {
+    border-radius: 0.75rem !important;
 }
